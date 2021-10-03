@@ -10,8 +10,8 @@ class ScreenModel extends Model
     use HasFactory;
 
     protected $table = "screen";
-
-    protected $filltable = [
+    public $timestamps = false;
+    protected $fillable = [
         'id',
         'title',
         'text',

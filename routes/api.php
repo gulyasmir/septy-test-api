@@ -23,6 +23,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('screen', 'App\Http\Controllers\Screen\ScreenController@screen');
 Route::get('screen/{id}', 'App\Http\Controllers\Screen\ScreenController@screenById');
 Route::post('screen', 'App\Http\Controllers\Screen\ScreenController@screenSave');
+Route::put('screen/{screen}', 'App\Http\Controllers\Screen\ScreenController@screenEdit');
+Route::delete('screen/{screen}', 'App\Http\Controllers\Screen\ScreenController@screenDelete');
 
 Route::get('contacts', 'App\Http\Controllers\Screen\ContactsController@contacts');
 

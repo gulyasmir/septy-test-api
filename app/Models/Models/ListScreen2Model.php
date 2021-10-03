@@ -10,7 +10,7 @@ class ListScreen2Model extends Model
     use HasFactory;
     protected $table = "list_screen2";
 
-    protected $filltable = [
+    protected $fillable = [
         'id',
         'text',
         'sort_order'
