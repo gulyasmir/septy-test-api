@@ -5,13 +5,13 @@ namespace App\Http\Controllers\Screen;
 use App\Http\Controllers\Controller;
 use App\Models\Models\ScreenModel;
 use Illuminate\Http\Request;
-use App\Models\Models\ContactsModel;
+use App\Models\Models\ContactModel;
 
-class ContactsController extends Controller
+class ContactController extends Controller
 {
     public function contacts()
     {
-        return response()->json(ContactsModel::find(1),200);
+        return response()->json(ContactModel::find(1),200);
     }
     public function contactsById($id){
         return response()->json(ScreenModel::find($id),200);
