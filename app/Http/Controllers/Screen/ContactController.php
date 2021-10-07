@@ -14,18 +14,18 @@ class ContactController extends Controller
         return response()->json(ContactModel::find(1),200);
     }
     public function contactsById($id){
-        return response()->json(ScreenModel::find($id),200);
+        return response()->json(ContactModel::find($id),200);
     }
 
     public function contactsSave(Request $req){
-        $contacts = ScreenModel::create($req->all());
+        $contacts = ContactModel::create($req->all());
         return response()->json($contacts,201);
     }
-    public function contactsEdit(Request $req, screenModel $contacts){
+    public function contactsEdit(Request $req, ContactModel $contacts){
         $contacts->update($req->all());
         return response()->json($contacts,200);
     }
-    public function contactsDelete(Request $req, screenModel $contacts){
+    public function contactsDelete(Request $req, ContactModel $contacts){
         $contacts->delete();
         return response()->json('',204);
     }
