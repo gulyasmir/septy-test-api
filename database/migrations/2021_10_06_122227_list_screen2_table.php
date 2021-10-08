@@ -16,6 +16,7 @@ class ListScreen2Table extends Migration
         Schema::create('list_screen2', function (Blueprint $table) {
             $table->id();
             $table->text('text');
+            $table->string('img');
             $table->integer('sort_order');
             $table->timestamps();
         });
