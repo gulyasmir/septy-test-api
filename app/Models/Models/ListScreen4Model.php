@@ -13,6 +13,7 @@ class ListScreen4Model extends Model
     protected $fillable = [
         'id',
         'text',
+        'img',
         'sort_order'
     ];
 }
