@@ -16,7 +16,7 @@ class ScreenTable extends Migration
         Schema::create('screen', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('text');
+            $table->text('text');
             $table->string('img');
             $table->timestamps();
         });
