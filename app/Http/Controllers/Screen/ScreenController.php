@@ -10,7 +10,7 @@ use App\Models\Models\ScreenModel;
 class ScreenController extends Controller
 {
     public function screen(){
-        return response()->json(ScreenModel::get(),200);
+        return response()->json(ScreenModel::orderBy('id', 'asc')->get(),200);
     }
 
     public function screenById($id){
