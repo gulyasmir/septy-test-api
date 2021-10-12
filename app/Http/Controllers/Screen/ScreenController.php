@@ -21,11 +21,11 @@ class ScreenController extends Controller
         $screen = ScreenModel::create($req->all());
         return response()->json($screen,201);
     }
-    public function screenEdit(Request $req, screenModel $screen){
+    public function screenEdit(Request $req, ScreenModel $screen){
         $screen->update($req->all());
         return response()->json($screen,200);
     }
-    public function screenDelete(Request $req, screenModel $screen){
+    public function screenDelete(Request $req, ScreenModel $screen){
         $screen->delete();
         return response()->json('',204);
     }

@@ -11,12 +11,11 @@ class ContactController extends Controller
 {
     public function contacts()
     {
-        return response()->json(ContactModel::find(1),200);
+        return response()->json(ContactModel::get(),200);
     }
     public function contactsById($id){
         return response()->json(ContactModel::find($id),200);
     }
-
     public function contactsSave(Request $req){
         $contacts = ContactModel::create($req->all());
         return response()->json($contacts,201);
