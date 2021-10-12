@@ -11,7 +11,7 @@ class ListScreen4Controller extends Controller
 {
     public function list()
     {
-        return response()->json(ListScreen4Model::get(), 200);
+        return response()->json(ListScreen4Model::orderBy('sort_order', 'asc')->get(), 200);
     }
 
     public function listById($id){

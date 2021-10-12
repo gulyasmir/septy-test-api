@@ -12,7 +12,7 @@ class ListScreen3Controller extends Controller
 {
     public function list()
     {
-        return response()->json(ListScreen3Model::get(), 200);
+        return response()->json(ListScreen3Model::orderBy('sort_order', 'asc')->get(), 200);
     }
 
     public function listById($id){
