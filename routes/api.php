@@ -29,8 +29,8 @@ Route::delete('screen/{screen}', 'App\Http\Controllers\Screen\ScreenController@s
 Route::get('contacts', 'App\Http\Controllers\Screen\ContactController@contacts'); // берет 1ю строку
 Route::get('contacts/{id}', 'App\Http\Controllers\Screen\ContactController@contactsById');
 Route::post('contacts', 'App\Http\Controllers\Screen\ContactController@contactsSave');
-Route::put('contacts/{screen}', 'App\Http\Controllers\Screen\ContactController@contactsEdit');
-Route::delete('contacts/{screen}', 'App\Http\Controllers\Screen\ContactController@contactsDelete');
+Route::put('contacts/{contacts}', 'App\Http\Controllers\Screen\ContactController@contactsEdit');
+Route::delete('contacts/{contacts}', 'App\Http\Controllers\Screen\ContactController@contactsDelete');
 
 Route::get('list-screen2', 'App\Http\Controllers\Screen\ListScreen2Controller@list');
 Route::get('list-screen2/{id}', 'App\Http\Controllers\Screen\ListScreen2Controller@listById');
