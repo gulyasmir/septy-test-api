@@ -10,6 +10,11 @@ use App\Models\Models\ScreenModel;
 class ScreenController extends Controller
 {
     public function screen(){
+        try{
+            $user = auth()->userOrFail();
+        } catch (\Tymon\JWTAuth\Exceptions\UserNotDefinedException $e){
+            return  response()->json(['error' =>true, 'message' => $e->getMessage()], 401);
+        }
         return response()->json(ScreenModel::orderBy('id', 'asc')->get(),200);
     }
 
