@@ -49,3 +49,5 @@ Route::get('list-screen4/{id}', 'App\Http\Controllers\Screen\ListScreen4Controll
 Route::post('list-screen4', 'App\Http\Controllers\Screen\ListScreen4Controller@listSave');
 Route::put('list-screen4/{list}', 'App\Http\Controllers\Screen\ListScreen4Controller@listEdit');
 Route::delete('list-screen4/{list}', 'App\Http\Controllers\Screen\ListScreen4Controller@listDelete');
+
+Route::post('login', 'Api\Auth\LoginController@login');

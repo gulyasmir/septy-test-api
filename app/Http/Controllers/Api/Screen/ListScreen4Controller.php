@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Screen;
+namespace App\Http\Controllers\Api\Screen;
 
 use App\Http\Controllers\Controller;
 use App\Models\Models\ListScreen2Model;
