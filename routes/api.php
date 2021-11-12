@@ -20,11 +20,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('screen', 'App\Http\Controllers\Screen\ScreenController@screen');
-Route::get('screen/{id}', 'App\Http\Controllers\Screen\ScreenController@screenById');
-Route::post('screen', 'App\Http\Controllers\Screen\ScreenController@screenSave');
-Route::put('screen/{screen}', 'App\Http\Controllers\Screen\ScreenController@screenEdit');
-Route::delete('screen/{screen}', 'App\Http\Controllers\Screen\ScreenController@screenDelete');
+Route::get('screen', 'App\Http\Controllers\Api\Screen\ScreenController@screen');
+Route::get('screen/{id}', 'App\Http\Controllers\Api\Screen\ScreenController@screenById');
+Route::post('screen', 'App\Http\Controllers\Screen\Api\ScreenController@screenSave');
+Route::put('screen/{screen}', 'App\Http\Controllers\Api\Screen\ScreenController@screenEdit');
+Route::delete('screen/{screen}', 'App\Http\Controllers\Api\Screen\ScreenController@screenDelete');
 
 Route::get('contacts', 'App\Http\Controllers\Screen\ContactController@contacts'); // берет 1ю строку
 Route::get('contacts/{id}', 'App\Http\Controllers\Screen\ContactController@contactsById');
