@@ -51,3 +51,4 @@ Route::put('list-screen4/{list}', 'App\Http\Controllers\Api\Screen\ListScreen4Co
 Route::delete('list-screen4/{list}', 'App\Http\Controllers\Api\Screen\ListScreen4Controller@listDelete');
 
 Route::post('login', 'App\Http\Controllers\Api\Auth\LoginController@login');
+Route::post('refresh', 'App\Http\Controllers\Api\Auth\LoginController@refresh');
