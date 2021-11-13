@@ -10,11 +10,7 @@ use App\Models\Models\ScreenModel;
 class ScreenController extends Controller
 {
     public function screen(){
-        try{
-            $user = auth()->userOrFail();
-        } catch (\Tymon\JWTAuth\Exceptions\UserNotDefinedException $e){
-            return  response()->json(['error' =>true, 'message' => $e->getMessage()], 401);
-        }
+
         return response()->json(ScreenModel::orderBy('id', 'asc')->get(),200);
     }
 
@@ -23,14 +19,29 @@ class ScreenController extends Controller
     }
 
     public function screenSave(Request $req){
+        try{
+            $user = auth()->userOrFail();
+        } catch (\Tymon\JWTAuth\Exceptions\UserNotDefinedException $e){
+            return  response()->json(['error' =>true, 'message' => $e->getMessage()], 401);
+        }
         $screen = ScreenModel::create($req->all());
         return response()->json($screen,201);
     }
     public function screenEdit(Request $req, ScreenModel $screen){
+        try{
+            $user = auth()->userOrFail();
+        } catch (\Tymon\JWTAuth\Exceptions\UserNotDefinedException $e){
+            return  response()->json(['error' =>true, 'message' => $e->getMessage()], 401);
+        }
         $screen->update($req->all());
         return response()->json($screen,200);
     }
     public function screenDelete(Request $req, ScreenModel $screen){
+        try{
+            $user = auth()->userOrFail();
+        } catch (\Tymon\JWTAuth\Exceptions\UserNotDefinedException $e){
+            return  response()->json(['error' =>true, 'message' => $e->getMessage()], 401);
+        }
         $screen->delete();
         return response()->json('',204);
     }

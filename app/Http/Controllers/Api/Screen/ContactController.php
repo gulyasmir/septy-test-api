@@ -17,14 +17,29 @@ class ContactController extends Controller
         return response()->json(ContactModel::find($id),200);
     }
     public function contactsSave(Request $req){
+        try{
+            $user = auth()->userOrFail();
+        } catch (\Tymon\JWTAuth\Exceptions\UserNotDefinedException $e){
+            return  response()->json(['error' =>true, 'message' => $e->getMessage()], 401);
+        }
         $contacts = ContactModel::create($req->all());
         return response()->json($contacts,201);
     }
     public function contactsEdit(Request $req, ContactModel $contacts){
+        try{
+            $user = auth()->userOrFail();
+        } catch (\Tymon\JWTAuth\Exceptions\UserNotDefinedException $e){
+            return  response()->json(['error' =>true, 'message' => $e->getMessage()], 401);
+        }
         $contacts->update($req->all());
         return response()->json($contacts,200);
     }
     public function contactsDelete(Request $req, ContactModel $contacts){
+        try{
+            $user = auth()->userOrFail();
+        } catch (\Tymon\JWTAuth\Exceptions\UserNotDefinedException $e){
+            return  response()->json(['error' =>true, 'message' => $e->getMessage()], 401);
+        }
         $contacts->delete();
         return response()->json('',204);
     }
