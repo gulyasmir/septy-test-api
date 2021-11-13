@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api\Screen;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\Controller;
 use App\Models\Models\ScreenModel;
 use Illuminate\Http\Request;
 
