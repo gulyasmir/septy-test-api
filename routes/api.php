@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+Route::get('screen', 'App\Http\Controllers\Api\Screen\ScreenController@screen');
 Route::get('screen/{id}', 'App\Http\Controllers\Api\Screen\ScreenController@screenById');
 
 
@@ -46,7 +46,7 @@ Route::post('login', 'App\Http\Controllers\Api\Auth\LoginController@login');
 
 Route::group(['middleware' => ['jwt.verify']], function() {
 
-    Route::get('screen', 'App\Http\Controllers\Api\Screen\ScreenController@screen');
+
     Route::post('refresh', 'App\Http\Controllers\Api\Auth\LoginController@refresh');
 
     Route::post('screen', 'App\Http\Controllers\Screen\Api\ScreenController@screenSave');
