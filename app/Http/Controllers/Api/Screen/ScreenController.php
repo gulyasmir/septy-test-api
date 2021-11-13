@@ -9,7 +9,6 @@ use App\Models\Models\ScreenModel;
 class ScreenController extends Controller
 {
     public function screen(){
-
         return response()->json(ScreenModel::orderBy('id', 'asc')->get(),200);
     }
 
@@ -18,11 +17,7 @@ class ScreenController extends Controller
     }
 
     public function screenSave(Request $req){
-        try{
-            $user = auth()->userOrFail();
-        } catch (\Tymon\JWTAuth\Exceptions\UserNotDefinedException $e){
-            return  response()->json(['error' =>true, 'message' => $e->getMessage()], 401);
-        }
+
         $screen = ScreenModel::create($req->all());
         return response()->json($screen,201);
     }
