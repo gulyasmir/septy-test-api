@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\Api\Screen;
 
 use App\Http\Controllers\Api\Controller;
-use App\Models\Models\ScreenModel;
 use Illuminate\Http\Request;
-
 use App\Models\Models\ListScreen2Model;
 
 class ListScreen2Controller extends Controller

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api\Screen;
 
 use App\Http\Controllers\Api\Controller;
-use App\Models\Models\ListScreen2Model;
 use Illuminate\Http\Request;
 use App\Models\Models\ListScreen4Model;
 

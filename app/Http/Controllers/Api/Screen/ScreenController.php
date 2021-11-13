@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api\Screen;
 
 use App\Http\Controllers\Api\Controller;
 use Illuminate\Http\Request;
-
 use App\Models\Models\ScreenModel;
 
 class ScreenController extends Controller
