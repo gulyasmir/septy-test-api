@@ -43,7 +43,7 @@ Route::get('list-screen4/{id}', 'App\Http\Controllers\Api\Screen\ListScreen4Cont
 Route::post('login', 'App\Http\Controllers\Api\Auth\LoginController@login');
 
 
-//Route::group(['middleware' => ['jwt.verify']], function() {
+Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('refresh', 'App\Http\Controllers\Api\Auth\LoginController@refresh');
 
     Route::post('screen', 'App\Http\Controllers\Screen\Api\ScreenController@screenSave');
@@ -65,4 +65,4 @@ Route::post('login', 'App\Http\Controllers\Api\Auth\LoginController@login');
     Route::post('list-screen4', 'App\Http\Controllers\Api\Screen\ListScreen4Controller@listSave');
     Route::put('list-screen4/{list}', 'App\Http\Controllers\Api\Screen\ListScreen4Controller@listEdit');
     Route::delete('list-screen4/{list}', 'App\Http\Controllers\Api\Screen\ListScreen4Controller@listDelete');
-//});
+});
