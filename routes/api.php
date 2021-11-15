@@ -45,11 +45,9 @@ Route::post('login', 'App\Http\Controllers\Api\Auth\LoginController@login');
 
 
 Route::group(['middleware' => ['jwt.verify']], function() {
-
-
     Route::post('refresh', 'App\Http\Controllers\Api\Auth\LoginController@refresh');
 
-    Route::post('screen', 'App\Http\Controllers\Screen\Api\ScreenController@screenSave');
+    Route::post('screen', 'App\Http\Controllers\Api\Screen\ScreenController@screenSave');
     Route::put('screen/{screen}', 'App\Http\Controllers\Api\Screen\ScreenController@screenEdit');
     Route::delete('screen/{screen}', 'App\Http\Controllers\Api\Screen\ScreenController@screenDelete');
 
