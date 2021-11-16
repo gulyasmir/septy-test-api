@@ -8,7 +8,7 @@ use App\Http\Controllers\Api\Controller;
 class LoginController extends Controller
 {
     public function login(Request $request){
-        $creds = $request->only(['email', 'password']);
+        $creds = $request->only(['name', 'password']);
         if (!$token = auth()->attempt($creds)) {
             return response()->json(['error' => true, 'message' =>'Incorrect Login/Password'], 401);
         }
