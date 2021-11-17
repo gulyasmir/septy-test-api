@@ -13,7 +13,7 @@ class UploadFileController extends Controller
                 $f->move(storage_path('images'), time().'_'.$f->getClientOriginalName());
             }
         }
-        return "Успех";
+        return "success";
     }
 }
 
