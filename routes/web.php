@@ -18,6 +18,5 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get('/orders', 'App\Http\Controllers\Api\OrderController@orderSave');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
