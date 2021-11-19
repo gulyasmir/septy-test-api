@@ -8,12 +8,15 @@ class UploadFileController extends Controller
 {
     public function upload(Request $request)
     {
-        foreach ($request->file() as $file) {
-            foreach ($file as $f) {
-                $f->move(storage_path('images'), time().'_'.$f->getClientOriginalName());
-            }
+        $uploadedFiles = [];
+
+        foreach ($request->file('files') as $file) {
+            $fileName = bcrypt(microtime()) . "." . $file->getClientOriginalExtension();
+            $file->move('/storage/images', $fileName);
+            array_push($uploadedFiles, "/storage/images/{$fileName}");
         }
-        return "success";
+
+        return response($uploadedFiles);
     }
 }
 
