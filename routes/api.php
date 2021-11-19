@@ -43,6 +43,7 @@ Route::get('list-screen4/{id}', 'App\Http\Controllers\Api\Screen\ListScreen4Cont
 Route::post('login', 'App\Http\Controllers\Api\Auth\LoginController@login');
 
 Route::post('upload',['as' => 'upload_file','uses' => 'UploadController@upload']);
+Route::post('orders', 'App\Http\Controllers\Api\OrderController@orderSave');
 
 Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('refresh', 'App\Http\Controllers\Api\Auth\LoginController@refresh');
