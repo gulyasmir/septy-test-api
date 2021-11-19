@@ -10,12 +10,12 @@ class OrderController extends Controller
 {
    public function orderSave(Request $req){
 
-       Mail::send([], [], function ($message) {
+      /* Mail::send([], [], function ($message) {
            $message->to('gulyasmir@yandex.ru')
                ->subject('Heroku test')
                ->setBody('<h1>Hi, welcome user!</h1>', 'text/html'); // for HTML rich messages
 
-       });
+       });*/
        return  response()->json(['success' =>true, 'message' => 'ok'], 200);
       }
 }
