@@ -14,12 +14,6 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-header("Cache-Control: no-cache, must-revalidate");
-header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
-header('Access-Control-Allow-Origin:  *');
-header('Access-Control-Allow-Methods:  POST, GET, OPTIONS, PUT, DELETE');
-header('Access-Control-Allow-Headers:  Content-Type, X-Auth-Token, Origin, Authorization');
-
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
@@ -49,7 +43,6 @@ Route::post('login', 'App\Http\Controllers\Api\Auth\LoginController@login');
 
 Route::post('upload',['as' => 'upload_file','uses' => 'UploadController@upload']);
 Route::post('orders', 'App\Http\Controllers\Api\OrderController@orderSave');
-//Route::get('orders', 'App\Http\Controllers\Api\OrderController@orderSave');
 
 Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('refresh', 'App\Http\Controllers\Api\Auth\LoginController@refresh');
