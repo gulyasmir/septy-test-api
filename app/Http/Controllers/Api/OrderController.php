@@ -16,5 +16,6 @@ class OrderController extends Controller
                ->setBody('<h1>Hi, welcome user!</h1>', 'text/html'); // for HTML rich messages
 
        });
+       return  response()->json(['success' =>true, 'message' => 'ok'], 200);
       }
 }
