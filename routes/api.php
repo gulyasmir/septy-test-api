@@ -44,6 +44,9 @@ Route::post('login', 'App\Http\Controllers\Api\Auth\LoginController@login');
 Route::post('upload','App\Http\Controllers\Api\UploadFileController@upload');
 Route::post('orders', 'App\Http\Controllers\Api\OrderController@orderSave');
 
+Route::post('/upload-image', 'UploadController@image');
+
+
 Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('refresh', 'App\Http\Controllers\Api\Auth\LoginController@refresh');
 
