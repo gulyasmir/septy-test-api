@@ -18,7 +18,7 @@ class UploadController extends Controller
 
         foreach ($request->file('files') as $file) {
             $fileName = bcrypt(microtime()) . "." . $file->getClientOriginalExtension();
-         //   $file->move('/uploads', $fileName);
+            $file->move('/uploads', $fileName);
             array_push($uploadedFiles, "/uploads/{$fileName}");
         }
 

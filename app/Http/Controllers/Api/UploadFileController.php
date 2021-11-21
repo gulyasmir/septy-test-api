@@ -8,17 +8,9 @@ class UploadFileController extends Controller
 {
     public function upload(Request $request)
     {
-        $uploadedFiles = [];
-        $uploadedFile = Request::file(‘files’) ;
-      //  foreach ($request->file('files') as $file) {
-            $fileName =  $uploadedFile->getClientOriginalExtension();
-        $uploadedFile->move('/storage/images/', $fileName);
-          //  array_push($uploadedFiles, "/storage/images/{$fileName}");
-     //   }
+        $path = $request->file('file')->store('images');
 
-        return response("OK", 200);
-
-
+        return $path;
     }
 
 
