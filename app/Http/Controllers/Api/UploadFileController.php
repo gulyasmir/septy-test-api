@@ -10,7 +10,7 @@ class UploadFileController extends Controller
     {
         $path = $request->file('file')->store('images');
 
-        return $path;
+        return asset($path);
     }
 
 
