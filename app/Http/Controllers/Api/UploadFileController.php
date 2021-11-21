@@ -10,7 +10,7 @@ class UploadFileController extends Controller
     {
         $path = $request->file('file')->store('images');
 
-        return response($request, 200);
+        return $path;
     }
 
 
